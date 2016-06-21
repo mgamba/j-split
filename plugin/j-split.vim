@@ -5,7 +5,7 @@
 :nnoremap <Leader>j :call JSplit()<cr>
 
 " Split by contiguous spaces into multiple lines and re-indent new lines
-function JSplit()
+function! JSplit()
   let s:startline = line(".")
 
   :s/\([^^ ]\) \+/\1\r/g
@@ -13,7 +13,7 @@ function JSplit()
   call ReindentTo(s:startline)
 endfunction
 
-function ReindentTo(line_number)
+function! ReindentTo(line_number)
   :normal Vt
   :exec a:line_number
   :normal =
